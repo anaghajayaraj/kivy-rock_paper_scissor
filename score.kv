@@ -1,0 +1,20 @@
+
+<Score>
+    canvas.before:
+        Color:
+            rgba:0,0,0,root.parent.score_op
+        Rectangle:
+            size:dp(root.wid),dp(root.hei)
+    orientation:
+        "vertical"
+    Label:
+        text:root.parent.msg
+        color:1,1,1,root.parent.score_op
+        font_size:dp(40)
+    Button:
+        text:"End Game"
+        on_press:root.end_game()
+        size_hint:.1,.1
+        pos_hint:{"center_x":0.5,"center_y":0.8}
+        background_color:.1,.6,.4
+</Score>

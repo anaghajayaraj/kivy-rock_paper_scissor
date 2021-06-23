@@ -1,0 +1,69 @@
+#:import score score
+
+WindowManager:
+    OpeningPage:
+    GamingPage:
+
+<OpeningPage>:
+    RelativeLayout:
+        canvas.before:
+            Rectangle:
+                source:"logo.jpg"
+                size:self.size
+        Button:
+            text:"Play"
+            pos_hint:{"center_x":0.5,"center_y":0.15}
+            size_hint:.1,.1
+            background_color:0.4,0.6,0.4,1
+            on_press:root.manager.current="second"
+
+<GamingPage>:
+    scoreSheet:scoreSheet
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba:0.4,0.6,0.4,1
+            Rectangle:
+                size:self.size
+                
+        Label:
+            pos_hint:{"center_x":0.1,"center_y":0.9}
+            text:"Computer: "+root.computer
+            background_normal:""
+            background_color:1,1,1,1
+        Label:
+            pos_hint:{"center_x":0.8,"center_y":0.9}
+            text:"You: "+root.you
+   
+    AnchorLayout:
+        anchor_x:"center"
+        anchor_y:"top"
+        Button:
+            size_hint:.1,.1
+            background_normal:""
+            background_color:.11,.36,.0,1
+            text:"Exit"
+            on_press:root.score()
+    AnchorLayout:
+        anchor_x:"center"
+        anchor_y:"center"
+        Button:
+            size_hint:.2,.2
+            background_normal:"rock.png"
+            on_press:root.rockSelected()
+    AnchorLayout:
+        anchor_x:"left"
+        anchor_y:"bottom"
+        Button:
+            size_hint:.2,.2
+            background_normal:"paper.png"
+            on_press:root.paperSelected()
+    AnchorLayout:
+        anchor_x:"right"
+        anchor_y:"bottom"
+        Button:
+            size_hint:.2,.2
+            background_normal:"scissor.png"
+            on_press:root.scissorSelected()
+    Score:
+        id:scoreSheet
