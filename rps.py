@@ -18,7 +18,7 @@ class GamingPage(Screen):
     score_op=NumericProperty()
     user_score=0
     comp_score=0
-    msg=StringProperty()
+    msg=StringProperty("It's a draw")
     computer=StringProperty(str(comp_score))
     you=StringProperty(str(user_score))
     def __init__(self,**kwargs):
@@ -65,26 +65,11 @@ class GamingPage(Screen):
         if self.user_score>self.comp_score:
             self.msg="You win"
             print(self.msg)
-        else:
+        if self.user_score<self.comp_score:
             self.msg="computer win"
             print(self.msg)
         
-    
-'''class ScorePage(Screen):
-    msg=StringProperty()
-    def  __init__(self,**kwargs):
-        super().__init__(**kwargs) 
-        
-    
-        l=GamingPage.score(GamingPage)
-        print("score is",l)
-    
-        self.msg="score is"+str(GamingPage.user_score)
-    
-    if GamingPage.user_score>GamingPage.comp_score:
-        self.msg="You win"
-    else:
-        self.msg="computer win"'''
+
 
 
 class WindowManager(ScreenManager):
