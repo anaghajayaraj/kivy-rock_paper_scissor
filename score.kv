@@ -1,16 +1,15 @@
 
 <Score>
     canvas.before:
-        Color:
-            rgba:0,0,0,root.parent.score_op
         Rectangle:
             size:dp(root.wid),dp(root.hei)
+            source:"congrats-bg.jpg"
     orientation:
         "vertical"
     Label:
         text:root.parent.msg
-        color:1,1,1,root.parent.score_op
-        font_size:dp(40)
+        color:.6,.4,.5,root.parent.score_op
+        font_size:dp(70)
     Button:
         text:"End Game"
         on_press:root.end_game()
