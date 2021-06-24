@@ -68,7 +68,13 @@ class GamingPage(Screen):
         if self.user_score<self.comp_score:
             self.msg="computer win"
             print(self.msg)
-        
+    def restart(self):
+        self.scoreSheet.opacity=0
+        self.comp_score=0
+        self.user_score=0
+        self.msg="It's a draw"
+        self.computer=str(self.comp_score)
+        self.you=str(self.user_score)  
 
 
 
