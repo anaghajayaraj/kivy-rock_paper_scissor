@@ -11,9 +11,18 @@
         color:.6,.4,.5,root.parent.score_op
         font_size:dp(70)
     Button:
+        text:"Restart"
+        on_press:root.parent.restart()
+        size_hint:.1,.1
+        pos_hint:{"center_x":0.5,"center_y":0.4}
+        background_color:.1,.6,.4
+    Button:
         text:"End Game"
         on_press:root.end_game()
         size_hint:.1,.1
         pos_hint:{"center_x":0.5,"center_y":0.8}
         background_color:.1,.6,.4
+    Label:
+        text:""
+        size_hint:.1,.3
 </Score>
